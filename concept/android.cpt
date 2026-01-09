@@ -7,3 +7,11 @@
 # Android Fail Basic (ANDROID)
 * "10" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, '88 ilde mağazadan ÜCRETSİZ TESLİMAT fırsatları')]"
+
+# Android Wait Gratis (Xpath)
+* "30" saniye bekle
+* XPath ile elementi bul ve tıkla "//*[contains(@text, 'Anasayfa')]"
+* "30" saniye bekle
+* XPath ile elementi bul ve tıkla "//*[contains(@text, 'Kategoriler')]"
+* "30" saniye bekle
+* XPath ile elementi bul ve tıkla "//*[contains(@text, 'Markalar')]"
