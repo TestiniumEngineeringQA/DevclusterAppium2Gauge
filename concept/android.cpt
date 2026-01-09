@@ -9,11 +9,11 @@
 * XPath ile elementi bul ve tıkla "//*[contains(@text, '88 ilde mağazadan ÜCRETSİZ TESLİMAT fırsatları')]"
 
 # Android Wait Gratis (Xpath)
-* "1800" saniye bekle
+* "10" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, 'Anasayfa')]"
-* "1800" saniye bekle
+* "10" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, 'Kategoriler')]"
-* "1800" saniye bekle
+* "10" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, 'Kampanyalar')]"
-* "1800" saniye bekle
+* "10" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, 'Markalar')]"
