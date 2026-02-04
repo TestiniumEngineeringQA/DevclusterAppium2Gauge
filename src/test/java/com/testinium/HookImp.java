@@ -7,6 +7,7 @@ import com.testinium.util.TestiniumEnvironment;
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.BeforeScenario;
 import io.appium.java_client.AppiumDriver;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.FluentWait;
