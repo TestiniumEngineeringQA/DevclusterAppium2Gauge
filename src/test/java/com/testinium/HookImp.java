@@ -32,7 +32,7 @@ public class HookImp {
     protected static FluentWait<AppiumDriver> appiumFluentWait;
 
     Boolean DeviceAndroid =false;
-    @BeforeScenario
+    @BeforeAll
     public void beforeScenario() {
         try {
             System.out.println("isAndroid:" +TestiniumEnvironment.isPlatformAndroid());
