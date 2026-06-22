@@ -18,3 +18,24 @@ AndroidWaitTest
 -----------
 tags: Android Wait Test
 * Android Wait Gratis (Xpath)
+
+AndroidBasicTestMultiSc
+-----------
+tags: Android Basic Test Multi Scenario
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)
+* Android MultiScenario (ANDROID)

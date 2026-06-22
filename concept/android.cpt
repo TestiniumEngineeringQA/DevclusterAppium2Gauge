@@ -8,6 +8,10 @@
 * "10" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, '88 ilde mağazadan ÜCRETSİZ TESLİMAT fırsatları')]"
 
+# Android MultiScenario (ANDROID)
+* "10" saniye bekle
+* XPath ile elementi bul ve tıkla "//*[contains(@text, '')]"
+
 # Android Wait Gratis (Xpath)
 * "1800" saniye bekle
 * XPath ile elementi bul ve tıkla "//*[contains(@text, 'Kategoriler')]"
