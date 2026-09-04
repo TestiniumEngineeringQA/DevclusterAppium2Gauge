@@ -54,6 +54,13 @@ public class HookImp {
                         appiumFluentWait.withTimeout(Duration.ofSeconds(8))
                                 .pollingEvery(Duration.ofMillis(350))
                                 .ignoring(NoSuchElementException.class);
+
+                        String totalRetryCount = System.getenv("TOTAL_RETRY_COUNT");
+                        String currentRetryCount = System.getenv("CURRENT_RETRY_COUNT");
+
+                        System.out.println(">>> [TOTAL_RETRY_COUNT] : " + totalRetryCount);
+                        System.out.println(">>> [CURRENT_RETRY_COUNT] : " + currentRetryCount);
+
                     }
                     else {
                         System.out.println("IOS");
@@ -72,6 +79,13 @@ public class HookImp {
                         appiumFluentWait.withTimeout(Duration.ofSeconds(8))
                                 .pollingEvery(Duration.ofMillis(350))
                                 .ignoring(NoSuchElementException.class);
+
+                        String totalRetryCount = System.getenv("TOTAL_RETRY_COUNT");
+                        String currentRetryCount = System.getenv("CURRENT_RETRY_COUNT");
+
+                        System.out.println(">>> [TOTAL_RETRY_COUNT] : " + totalRetryCount);
+                        System.out.println(">>> [CURRENT_RETRY_COUNT] : " + currentRetryCount);
+
                     }
         } catch (MalformedURLException e) {
             logger.error(e.getMessage());
