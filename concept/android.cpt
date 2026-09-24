@@ -2,7 +2,7 @@
 
 # Android Basic (ANDROID)
 * "15" saniye bekle
-* XPath ile elementi bul ve tıkla "//*[contains(@text, 'Kategoriler')]"
+* XPath ile elementi bul ve tıkla "//*[contains(@text, '')]"
 
 # Android Fail Basic (ANDROID)
 * "10" saniye bekle
