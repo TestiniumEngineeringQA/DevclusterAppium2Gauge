@@ -22,7 +22,6 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import static com.testinium.util.Constants.CapabilityConstants.*;
-import static com.testinium.util.Constants.PLATFORM_NAME;
 
 public class HookImp {
 
@@ -39,13 +38,9 @@ public class HookImp {
             System.out.println("isAndroid:" +TestiniumEnvironment.isPlatformAndroid());
                     if(DeviceAndroid || TestiniumEnvironment.isPlatformAndroid()){
                         DesiredCapabilities overridden = new DesiredCapabilities();
-                        overridden.setCapability(PLATFORM_NAME, Platform.ANDROID);
-                        overridden.setCapability(UDID, "YOUR_UDID");
-                        overridden.setCapability(APPIUM_AUTOMATION_NAME, "YOUR_AUTOMATION_NAME");
                         overridden.setCapability(APPIUM_APP_PACKAGE, "YOUR_APP_PACKAGE");
                         overridden.setCapability(APPIUM_APP_ACTIVITY, "YOUR_APP_ACTIVITY");
                         overridden.setCapability(APPIUM_AUTO_GRANT_PERMISSIONS, true);
-                        overridden.setCapability(APPIUM_NEW_COMMAND_TIMEOUT, 60000);
                         hubUrl = new URL("http://192.168.1.89:4723/");
                         driver = new TestiniumAndroidDriver(hubUrl,overridden);
 
@@ -66,11 +61,7 @@ public class HookImp {
                         System.out.println("IOS");
                         hubUrl = new URL("http://192.168.1.89:4723/");
                         DesiredCapabilities overridden = new DesiredCapabilities();
-                        overridden.setCapability(Constants.PLATFORM_NAME, Platform.IOS);
-                        overridden.setCapability(UDID, "YOUR_UDID");
-                        overridden.setCapability(APPIUM_AUTOMATION_NAME, "YOUR_AUTOMATION_NAME");
                         overridden.setCapability(APPIUM_BUNDLE_ID, "YOUR_BUNDLE_ID");
-                        overridden.setCapability(APPIUM_AUTO_ACCEPT_ALERTS, true);
                         driver = new TestiniumIOSDriver(hubUrl, overridden);
 
 
