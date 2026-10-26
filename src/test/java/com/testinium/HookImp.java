@@ -18,7 +18,11 @@ import org.slf4j.LoggerFactory;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
 import static com.testinium.util.Constants.CapabilityConstants.*;
@@ -43,6 +47,7 @@ public class HookImp {
                         overridden.setCapability(APPIUM_AUTO_GRANT_PERMISSIONS, true);
                         hubUrl = new URL("http://192.168.1.89:4723/");
                         driver = new TestiniumAndroidDriver(hubUrl,overridden);
+                        logDriverCapabilities();
 
                         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
                         appiumFluentWait = new FluentWait<AppiumDriver>(driver);
@@ -63,6 +68,7 @@ public class HookImp {
                         DesiredCapabilities overridden = new DesiredCapabilities();
                         overridden.setCapability(APPIUM_BUNDLE_ID, "YOUR_BUNDLE_ID");
                         driver = new TestiniumIOSDriver(hubUrl, overridden);
+                        logDriverCapabilities();
 
 
                         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -83,6 +89,41 @@ public class HookImp {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void logDriverCapabilities() {
+        Map<String, Object> capabilities = new TreeMap<>(driver.getCapabilities().asMap());
+        logger.info("Appium driver started with capabilities: {}", maskSensitiveValues(capabilities));
+    }
+
+    private Map<String, Object> maskSensitiveValues(Map<String, ?> values) {
+        Map<String, Object> maskedValues = new LinkedHashMap<>();
+
+        values.forEach((key, value) -> {
+            if (isSensitiveCapability(key)) {
+                maskedValues.put(key, "***");
+            } else if (value instanceof Map<?, ?> nestedValues) {
+                Map<String, Object> stringKeyedValues = new LinkedHashMap<>();
+                nestedValues.forEach((nestedKey, nestedValue) ->
+                        stringKeyedValues.put(String.valueOf(nestedKey), nestedValue));
+                maskedValues.put(key, maskSensitiveValues(stringKeyedValues));
+            } else {
+                maskedValues.put(key, value);
+            }
+        });
+
+        return maskedValues;
+    }
+
+    private boolean isSensitiveCapability(String capabilityName) {
+        String normalizedName = capabilityName.toLowerCase(Locale.ROOT);
+        return normalizedName.contains("password")
+                || normalizedName.contains("token")
+                || normalizedName.contains("secret")
+                || normalizedName.contains("accesskey")
+                || normalizedName.contains("api_key")
+                || normalizedName.contains("apikey")
+                || normalizedName.contains("authorization");
     }
 
     @AfterScenario
