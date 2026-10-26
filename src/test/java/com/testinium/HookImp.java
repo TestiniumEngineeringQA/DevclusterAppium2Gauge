@@ -93,7 +93,7 @@ public class HookImp {
 
     private void logDriverCapabilities() {
         Map<String, Object> capabilities = new TreeMap<>(driver.getCapabilities().asMap());
-        logger.info("Appium driver started with capabilities: {}", maskSensitiveValues(capabilities));
+        System.out.println(">>> [APPIUM_DRIVER_CAPABILITIES] : " + maskSensitiveValues(capabilities));
     }
 
     private Map<String, Object> maskSensitiveValues(Map<String, ?> values) {
