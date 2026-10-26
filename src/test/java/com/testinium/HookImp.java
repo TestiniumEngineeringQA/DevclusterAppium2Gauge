@@ -67,6 +67,7 @@ public class HookImp {
                         hubUrl = new URL("http://192.168.1.89:4723/");
                         DesiredCapabilities overridden = new DesiredCapabilities();
                         overridden.setCapability(APPIUM_BUNDLE_ID, "YOUR_BUNDLE_ID");
+                        overridden.setCapability("appium:autoAcceptAlerts", false);
                         driver = new TestiniumIOSDriver(hubUrl, overridden);
                         logDriverCapabilities();
 
